@@ -4,7 +4,6 @@ import { Button } from "./ui/button";
 
 const HeroSection = () => {
   return (
-<<<<<<< HEAD
     <section className="relative flex flex-col items-center justify-center text-center min-h-[80vh] px-6 bg-gradient-to-b from-[#f0f9ff] to-white">
       {/* Subtext */}
       <p className="text-lg text-gray-600 mb-4 max-w-xl">
@@ -45,30 +44,6 @@ const HeroSection = () => {
         </Button>
       </div>
     </section>
-=======
-    <>
-      <section className="flex flex-col items-center justify-center text-center py-24">
-        <p className="text-md text-gray-600 m-6 ">
-          Collaborate. Create. Change the world—your skills can make a
-          difference.
-        </p>
-        <h1 className="text-4xl md:text-6xl font-bold   leading-tight mb-5">
-          Your Skills. Their Mission. <br />
-          Our Future.
-        </h1>
-
-        <div className="flex items-center gap-3 mt-6">
-          <Input
-            placeholder="Search for opportunities..."
-            className="w-72 border-2 border-gray-300 rounded-lg p-5 focus:border-[#0000FF]"
-          />
-          <Button className="bg-[#0000FF] text-white px-10 py-5 rounded-lg hover:bg-[#0000FF] text-md">
-            Get Started
-          </Button>
-        </div>
-      </section>
-    </>
->>>>>>> 965dc2e29ba1ddd8a31e0072c94410a07d045452
   );
 };
 
