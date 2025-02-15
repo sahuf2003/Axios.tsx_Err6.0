@@ -1,19 +1,19 @@
-// models/Project.ts
+import mongoose, { Schema, Document } from "mongoose";
 
-import mongoose from "mongoose";
+interface Project extends Document {
+    title: string;
+    ngo: string;
+    description: string;
+    price: string;
+}
 
-const ProjectSchema = new mongoose.Schema(
-    {
-        name: { type: String, required: true },
-        techstack:{type:String, required:true},
-        description:{type:String,required:true},
-        progress:{type:String, required:true},
+const projectSchema: Schema = new Schema({
+    title: { type: String, required: true },
+    ngo: { type: String, required: true },
+    description: { type: String, required: true },
+    price: { type: String, required: true },
+});
 
-    },
-    { timestamps: true }
-);
+const ProjectModel = mongoose.models.Project || mongoose.model<Project>("Project", projectSchema);
 
-const Project = mongoose.models.Project || mongoose.model("Project", ProjectSchema);
-
-export default Project;
-
+export default ProjectModel;
