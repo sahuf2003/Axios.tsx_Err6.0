@@ -1,9 +1,20 @@
+import React from "react";
+import { SidebarProvider } from "@/context/SidebarContext"; // Ensure SidebarProvider is correctly imported
+import { Sidebar } from "@/components/ui/sidebar";
+import { NavigationMenu } from "@/components/ui/navigation-menu";
 
-export default function FreelancerLayout({ children }: { children: React.ReactNode }) {
+const FreelancerLayout = ({ children }: { children: React.ReactNode }) => {
     return (
-        <div>
-            <main className="container mx-auto p-4">{children}</main>
-
-        </div>
+        <SidebarProvider> {/* ✅ Wrap with SidebarProvider */}
+            <div className="flex">
+                <Sidebar />
+                <div className="flex-1">
+                    <NavigationMenu />
+                    <main className="p-6">{children}</main>
+                </div>
+            </div>
+        </SidebarProvider>
     );
-}
+};
+
+export default FreelancerLayout;

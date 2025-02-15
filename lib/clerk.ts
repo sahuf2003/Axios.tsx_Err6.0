@@ -1,10 +1,9 @@
-import { UserProfile } from '@clerk/nextjs';
+import { UserResource } from "@clerk/types"; // Use UserResource instead of UserProfile
 
 export const clerkConfig = {
     publishableKey: process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!,
 };
 
-// Use the `UserProfile` type to ensure proper typing for the `user`
-export const getClerkUserRoles = (user: UserProfile) => {
-    return user.publicMetadata?.role || 'freelancer';
+export const getClerkUserRoles = (user: UserResource) => {
+    return user.publicMetadata?.role || "freelancer";
 };

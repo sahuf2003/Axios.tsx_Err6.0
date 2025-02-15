@@ -1,12 +1,8 @@
-// import Navbar from "@/components/Navbar";
-// import Footer from "@/components/Footer";
-
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
     return (
-        <div>
-            {/* <Navbar /> */}
-            <main className="container mx-auto p-4">{children}</main>
-            {/* <Footer /> */}
+        <div className="flex min-h-screen flex-col">
+
+            <main className="flex flex-1 items-center justify-center">{children}</main>
         </div>
     );
 }

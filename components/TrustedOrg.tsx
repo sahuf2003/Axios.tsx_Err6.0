@@ -6,13 +6,7 @@ const logos = [
   "https://altcoinsbox.com/wp-content/uploads/2023/03/full-cronos-logo.png",
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRirqXYBru89rBEDKfVCAK5Vbf_IKWcKEg9qQ&s",
   "https://altcoinsbox.com/wp-content/uploads/2023/03/full-cronos-logo.png",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRirqXYBru89rBEDKfVCAK5Vbf_IKWcKEg9qQ&s",
-  "https://altcoinsbox.com/wp-content/uploads/2023/03/full-cronos-logo.png",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRirqXYBru89rBEDKfVCAK5Vbf_IKWcKEg9qQ&s",
-  "https://altcoinsbox.com/wp-content/uploads/2023/03/full-cronos-logo.png",
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRirqXYBru89rBEDKfVCAK5Vbf_IKWcKEg9qQ&s",
-  "https://altcoinsbox.com/wp-content/uploads/2023/03/full-cronos-logo.png",
-  // Add more logo URLs here
+  // Add more logos as needed
 ];
 
 const TrustedOrg = () => {
@@ -28,7 +22,7 @@ const TrustedOrg = () => {
               key={index}
               src={logo}
               width={120}
-              height={120}      
+              height={120}
               alt="NGO Logo"
               className="w-[100px] md:w-[120px] object-contain transition-transform transform hover:scale-110 hover:opacity-80"
             />

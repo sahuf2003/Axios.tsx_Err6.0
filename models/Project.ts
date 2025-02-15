@@ -1,19 +1,21 @@
 import mongoose, { Schema, Document } from "mongoose";
 
-interface Project extends Document {
+export interface IProject extends Document {
     title: string;
-    ngo: string;
+    ngo: mongoose.Types.ObjectId;
     description: string;
-    price: string;
+    price: number;
 }
 
-const projectSchema: Schema = new Schema({
-    title: { type: String, required: true },
-    ngo: { type: String, required: true },
-    description: { type: String, required: true },
-    price: { type: String, required: true },
-});
+const ProjectSchema: Schema<IProject> = new Schema(
+    {
+        title: { type: String, required: true },
+        ngo: { type: Schema.Types.ObjectId, ref: "Ngo", required: true },
+        description: { type: String, required: true },
+        price: { type: Number, required: true },
+    },
+    { timestamps: true }
+);
 
-const ProjectModel = mongoose.models.Project || mongoose.model<Project>("Project", projectSchema);
-
-export default ProjectModel;
+const Project = mongoose.models.Project || mongoose.model<IProject>("Project", ProjectSchema);
+export default Project;

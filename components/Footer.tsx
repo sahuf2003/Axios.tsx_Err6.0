@@ -1,19 +1,10 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
-import {
-  FaFacebook,
-  FaTwitter,
-  FaLinkedin,
-  FaInstagram,
-  FaEnvelope,
-  FaPhone,
-} from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram, FaEnvelope, FaPhone } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-black to-blue-700 text-white py-16 mt-10">
+    <footer className="bg-gradient-to-r from-blue-800 to-blue-500 text-white py-16 mt-10">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
           {/* About Section */}
@@ -94,7 +85,7 @@ export default function Footer() {
               placeholder="Enter your email"
               className="w-full mt-3 p-2 rounded-md text-black"
             />
-            <button className="mt-3 px-4 py-2 bg-blue-500 rounded-md hover:bg-blue-600">
+            <button className="mt-3 px-4 py-2 bg-blue-600 rounded-md hover:bg-blue-700">
               Subscribe
             </button>
           </div>
@@ -103,7 +94,7 @@ export default function Footer() {
         <div className="border-t border-gray-600 mt-10 pt-5 text-center text-gray-300">
           <p>
             &copy; {new Date().getFullYear()} ImpactX. All rights reserved. |
-            Designed by Team Axios.tsx
+            Designed by Team Axios
           </p>
         </div>
       </div>

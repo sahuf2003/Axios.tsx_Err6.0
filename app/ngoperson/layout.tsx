@@ -1,11 +1,13 @@
+"use client";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function NGOLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="container mx-auto p-4">{children}</main>
+      <main className="flex-grow container mx-auto p-6">{children}</main>
       <Footer />
     </div>
   );

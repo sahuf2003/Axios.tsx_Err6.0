@@ -11,11 +11,9 @@ const ChatbotPage = () => {
     const handleSendMessage = () => {
         if (message.trim() === "") return;
 
-        // Add user message to chat
         setChat([...chat, { sender: "user", message }]);
         setMessage("");
 
-        // Simulate chatbot reply (for now, we'll just echo the user's message)
         setTimeout(() => {
             setChat((prevChat) => [
                 ...prevChat,
@@ -27,12 +25,11 @@ const ChatbotPage = () => {
     return (
         <div className="max-w-3xl mx-auto p-6 h-screen flex flex-col">
             <div className="flex justify-between items-center pb-4 border-b border-gray-300">
-                <h1 className="text-3xl font-bold text-blue-600">Chatbot</h1>
+                <h1 className="text-3xl font-bold text-blue-600">ChatX</h1>
             </div>
 
             <div className="flex-grow overflow-y-auto mt-6 bg-white p-4 rounded-lg shadow-lg">
                 <div className="space-y-4">
-                    {/* Chat Messages */}
                     {chat.map((item, index) => (
                         <div
                             key={index}
@@ -40,8 +37,8 @@ const ChatbotPage = () => {
                         >
                             <div
                                 className={`max-w-xs p-3 rounded-lg ${item.sender === "user"
-                                        ? "bg-blue-600 text-white"
-                                        : "bg-gray-200 text-gray-700"
+                                    ? "bg-blue-600 text-white"
+                                    : "bg-gray-200 text-gray-700"
                                     }`}
                             >
                                 {item.message}
@@ -51,7 +48,6 @@ const ChatbotPage = () => {
                 </div>
             </div>
 
-            {/* Chat Input */}
             <div className="mt-4 pt-4 border-t border-gray-300 flex items-center space-x-4">
                 <input
                     type="text"

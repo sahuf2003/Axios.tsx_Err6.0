@@ -12,7 +12,7 @@
 //   projectId: "impactx-c3342",
 //   storageBucket: "impactx-c3342.firebasestorage.app",
 //   messagingSenderId: "893572089558",
-//   appId: "1:893572089558:web:09d5aaed5f063dae45ab77",
+// //   appId: "1:893572089558:web:09d5aaed5f063dae45ab77",
 //   measurementId: "G-4ES09SD98Q"
 // };
 

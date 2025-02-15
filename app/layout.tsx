@@ -3,6 +3,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -16,21 +18,17 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// ✅ Metadata (Favicon Fix)
 export const metadata: Metadata = {
   title: "ImpactX",
-  description: "SkillBridge",
-  icons: {
-    icon: "/favicon.ico", 
-  },
+  description: "ImpactX is a platform for NGOs and freelancers to collaborate on social impact projects.",
+  icons: "/public/favicon.ico", // ✅ Direct reference to favicon
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <head>
-          <link rel="icon" href="/favicon.ico" />
-        </head>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
           <Navbar />
           <main className="flex-grow">{children}</main>
