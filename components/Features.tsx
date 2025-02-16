@@ -1,47 +1,50 @@
 import React from "react";
-import { Users, Projector, Link, Shield } from "lucide-react";
+import Image from "next/image";
 
 const features = [
   {
     title: "Seamless Collaboration",
     description:
       "Work effortlessly with teams, share resources, and communicate effectively.",
-    icon: <Users size={48} className="text-blue-600" />,
+    image: "/collaboration.jpg",
   },
   {
     title: "Smart Project Management",
     description:
       "Manage your projects with intelligent tools and real-time updates.",
-    icon: <Projector size={48} className="text-green-600" />,
-  },
-  {
-    title: "Networking Opportunities",
-    description:
-      "Connect with professionals and expand your career opportunities.",
-    icon: <Link size={48} className="text-blue-600" />,
+    image: "/impact.jpg",
   },
   {
     title: "Secure & Reliable Platform",
     description:
       "Your data is safe with our top-notch security measures and encryption.",
-    icon: <Shield size={48} className="text-blue-600" />,
+    image: "/verification.jpg",
   },
 ];
 
 export default function Features() {
   return (
-    <section className="py-16 bg-gradient-to-r from-gray-100 to-white">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10">
-          Features
+        <h4 className="text-md font-semibold text-left text-gray-800 mb-2">
+          What We Provide ?
+        </h4>
+        <h2 className="text-xl md:text-4xl font-bold text-left text-gray-800 mb-10">
+          Features That Make An Impact
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center hover:shadow-xl transition-shadow"
+              className="bg-white border border-black p-6 rounded-lg shadow-md flex flex-col items-left text-left hover:shadow-xl transition-shadow"
             >
-              {feature.icon}
+              <Image
+                src={feature.image}
+                alt={feature.title}
+                width={300}
+                height={300}
+                className="rounded-full"
+              />
               <h3 className="text-2xl font-semibold text-gray-800 mt-4">
                 {feature.title}
               </h3>

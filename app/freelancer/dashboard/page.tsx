@@ -1,11 +1,7 @@
-// freelancer/dashboard/page.tsx
-
 'use client';
 
 import React from 'react';
 import { useUser } from '@clerk/nextjs';
-import { SidebarProvider } from '@/context/SidebarContext';
-import { Sidebar } from '@/components/ui/sidebar';
 import { NavigationMenu } from '@/components/ui/navigation-menu';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -24,42 +20,37 @@ const DashboardPage = () => {
     if (!user) return <div>Unauthorized</div>;
 
     return (
-        <SidebarProvider>
-            <div className="flex">
-                <Sidebar />
-                <div className="flex-1 p-6">
-                    <NavigationMenu />
-                    <h1 className="text-3xl font-bold text-blue-600">Welcome {user.firstName}!</h1>
-                    <p className="text-lg mt-4">Monitor your progress, manage tasks, and apply for new projects.</p>
+        <div className="p-6">
+            <NavigationMenu />
+            <h1 className="text-3xl font-bold text-blue-600">Welcome {user.firstName}!</h1>
+            <p className="text-lg mt-4">Monitor your progress, manage tasks, and apply for new projects.</p>
 
-                    {/* Example cards showing stats */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-                        <Card>
-                            <CardContent>
-                                <h2 className="font-semibold">Total Projects Completed</h2>
-                                <p className="text-xl">{dummyStats.totalProjectsCompleted}</p>
-                            </CardContent>
-                        </Card>
+            {/* Example cards showing stats */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                <Card>
+                    <CardContent>
+                        <h2 className="font-semibold">Total Projects Completed</h2>
+                        <p className="text-xl">{dummyStats.totalProjectsCompleted}</p>
+                    </CardContent>
+                </Card>
 
-                        <Card>
-                            <CardContent>
-                                <h2 className="font-semibold">Projects in Progress</h2>
-                                <p className="text-xl">{dummyStats.projectsInProgress}</p>
-                            </CardContent>
-                        </Card>
+                <Card>
+                    <CardContent>
+                        <h2 className="font-semibold">Projects in Progress</h2>
+                        <p className="text-xl">{dummyStats.projectsInProgress}</p>
+                    </CardContent>
+                </Card>
 
-                        <Card>
-                            <CardContent>
-                                <h2 className="font-semibold">Total Earnings</h2>
-                                <p className="text-xl">${dummyStats.totalEarnings}</p>
-                            </CardContent>
-                        </Card>
-                    </div>
-
-                    <Button className="mt-8 bg-blue-600 hover:bg-blue-700">View Projects</Button>
-                </div>
+                <Card>
+                    <CardContent>
+                        <h2 className="font-semibold">Total Earnings</h2>
+                        <p className="text-xl">${dummyStats.totalEarnings}</p>
+                    </CardContent>
+                </Card>
             </div>
-        </SidebarProvider>
+
+            <Button className="mt-8 bg-blue-600 hover:bg-blue-700">View Projects</Button>
+        </div>
     );
 };
 
